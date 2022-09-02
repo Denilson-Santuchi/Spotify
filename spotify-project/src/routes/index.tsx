@@ -1,18 +1,30 @@
 import {
   BrowserRouter,
   Routes,
-  Route,
-  Navigate
+  Route
 } from 'react-router-dom';
 
-import { Home } from '../pages';
+import {
+  Album,
+  Favorites,
+  Login,
+  NotFound,
+  Profile,
+  ProfileEdit,
+  Search
+} from '../pages';
 
 export const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={ <Home /> } />
-        <Route path="*" element={ <Navigate to="/" /> } />
+        <Route path="/" element={<Login />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/album/:id" element={<Album />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/edit" element={<ProfileEdit />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
