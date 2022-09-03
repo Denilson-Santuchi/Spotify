@@ -1,5 +1,10 @@
+import { Header } from "../components"
+
 export const Album = () => {
   return (
-    <div>Album</div>
+    <section>
+      <Header />
+      <div>Album</div>
+    </section>
   )
 }
