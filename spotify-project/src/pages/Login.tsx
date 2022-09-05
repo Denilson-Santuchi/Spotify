@@ -1,11 +1,12 @@
+import { useContext } from 'react'
+import { AppContext } from '../context'
+import { ILogin } from '../interfaces';
+import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
-  const [user, setUser] = useState('');
-  const [password, setPassword] = useState('');
+  const { user, password, setUser, setPassword } = useContext(AppContext) as unknown as ILogin;
   const navigate = useNavigate();
 
   return (
