@@ -1,5 +1,10 @@
+import { Header } from "../components"
+
 export const ProfileEdit = () => {
   return (
-    <div>ProfileEdit</div>
+    <section>
+      <Header />
+      <div>ProfileEdit</div>
+    </section>
   )
 }

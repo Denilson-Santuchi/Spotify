@@ -1,5 +1,10 @@
+import { Header } from "../components"
+
 export const Favorites = () => {
   return (
-    <div>Favorites</div>
+    <section>
+      <Header />
+      <div>Favorites</div>
+    </section>
   )
 }
