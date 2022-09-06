@@ -7,10 +7,12 @@ import { useNavigate } from 'react-router-dom';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 
 export const Search = () => {
   const [artist, setArtist] = useState('');
-  const { musics, setMusics, setMusicView, musicView } = useContext(AppContext) as any;
+  const { musics, setMusics, setMusicView } = useContext(AppContext) as any;
   const navigate = useNavigate();
 
   const useClickButon = async () => {
@@ -22,7 +24,6 @@ export const Search = () => {
       .catch((err) => {
         console.log({ message: err })
       })
-    console.log(musics)
   }
 
   return (
@@ -55,29 +56,29 @@ export const Search = () => {
           artworkUrl100,
           trackId }: any) => {
           return (
-            <div key={trackId}
-              onClick={() => {
-                setMusicView({
-                  artistName,
-                  collectionName,
-                  trackName,
-                  previewUrl,
-                  primaryGenreName,
-                  artworkUrl100,
-                  trackId
-                })
-                console.log(musicView);
-                navigate('/music')
-                console.log(musicView);
-              }}
+            <Card style={{ width: '11rem' }} key={trackId}
+            onClick={() => {
+              setMusicView({
+                artistName,
+                collectionName,
+                trackName,
+                previewUrl,
+                primaryGenreName,
+                artworkUrl100,
+                trackId
+              })
+              navigate('/music')
+            }}
             >
-              <h1>{artistName}</h1>
-              <img src={artworkUrl100} alt={collectionName} />
-              <h2>{trackName}</h2>
-            </div>
+              <Card.Img variant="top" src={artworkUrl100} alt={collectionName} />
+              <Card.Body>
+                <Card.Title>{artistName}</Card.Title>
+                <Card.Text>{trackName}</Card.Text>
+              </Card.Body>
+            </Card>
           )
         })}
       </main>
-    </section>
+    </section >
   )
 }
