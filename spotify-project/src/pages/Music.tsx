@@ -4,6 +4,7 @@ import { Header } from '../components';
 import { useNavigate } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 export const Music = () => {
   const { musicView } = useContext(AppContext) as any;
@@ -20,33 +21,34 @@ export const Music = () => {
             trackName,
             previewUrl,
             primaryGenreName,
-            artworkUrl100,
-            trackId }: any) => {
+            artworkUrl100 }: any) => {
             return (
-              <div key={trackId}>
-                <h1>{artistName}</h1>
-                <img src={artworkUrl100} alt={collectionName} />
-                <h2>{trackName}</h2>
-                <p>{primaryGenreName}</p>
-                <audio
-                  src={previewUrl}
-                  controls
+              <Card style={{ width: '20rem' }}>
+                <Card.Img variant="top" src={artworkUrl100} alt={collectionName} />
+                <Card.Body>
+                  <Card.Title>{artistName}</Card.Title>
+                  <Card.Text>{trackName}</Card.Text>
+                  <Card.Text>{primaryGenreName}</Card.Text>
+                  <audio
+                    src={previewUrl}
+                    controls
+                  >
+                    <track kind="captions" />
+                    O seu navegador não suporta o elemento
+                    <code>audio</code>
+                  </audio>
+                </Card.Body>
+                <Button
+                  variant="primary"
+                  type="button"
+                  onClick={() => navigate('/search')}
                 >
-                  <track kind="captions" />
-                  O seu navegador não suporta o elemento
-                  <code>audio</code>
-                </audio>
-              </div>
+                  Voltar
+                </Button>
+              </Card>
             )
           })}
         </main>}
-        <Button
-        variant="primary"
-        type="button"
-        onClick={() => navigate('/search')}
-      >
-        Voltar
-      </Button>
     </section>
   )
 }
