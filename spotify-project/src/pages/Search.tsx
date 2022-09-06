@@ -57,18 +57,18 @@ export const Search = () => {
           trackId }: any) => {
           return (
             <Card style={{ width: '11rem' }} key={trackId}
-            onClick={() => {
-              setMusicView({
-                artistName,
-                collectionName,
-                trackName,
-                previewUrl,
-                primaryGenreName,
-                artworkUrl100,
-                trackId
-              })
-              navigate('/music')
-            }}
+              onClick={() => {
+                setMusicView({
+                  artistName,
+                  collectionName,
+                  trackName,
+                  previewUrl,
+                  primaryGenreName,
+                  artworkUrl100,
+                  trackId
+                })
+                navigate('/music')
+              }}
             >
               <Card.Img variant="top" src={artworkUrl100} alt={collectionName} />
               <Card.Body>
