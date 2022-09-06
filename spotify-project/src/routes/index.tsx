@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 
 import {
-  Album,
+  Music,
   Favorites,
   Login,
   NotFound,
@@ -20,7 +20,7 @@ export const Router = () => {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/album/:id" element={<Album />} />
+        <Route path="/music/" element={<Music />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/edit" element={<ProfileEdit />} />
