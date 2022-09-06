@@ -1,4 +1,4 @@
-export * from './Album';
+export * from './Music';
 export * from './Favorites';
 export * from './Login';
 export * from './NotFound';
