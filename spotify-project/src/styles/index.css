@@ -1,0 +1,15 @@
+html {
+  background-color: aqua;
+}
+
+.mb-3 {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: 2rem;
+  padding: 1rem;
+  border: 5rem 1rem;
+  border-radius: 1rem;
+}
