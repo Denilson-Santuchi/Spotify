@@ -1,1 +1,1 @@
-export * from './useArtistsAndBands'
+export * from './Api'
