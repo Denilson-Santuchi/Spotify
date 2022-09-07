@@ -6,12 +6,14 @@ import { ILogin } from '../interfaces';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+import '../styles/index.css'
+
 export const Login = () => {
   const { user, password, setUser, setPassword } = useContext(AppContext) as unknown as ILogin;
   const navigate = useNavigate();
 
   return (
-    <Form>
+    <Form className="form">
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Username</Form.Label>
         <Form.Control
@@ -22,25 +24,22 @@ export const Login = () => {
         <Form.Text className="text-muted">
           Você será chamado por esse nome.
         </Form.Text>
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Senha</Form.Label>
         <Form.Control
           type="password"
           placeholder="Sua senha"
           onChange={({ target }) => setPassword(target.value)}
         />
+        <Button
+          variant="primary"
+          type="button"
+          disabled={user.length >= 3 && password.length >= 6
+            ? false : true}
+          onClick={() => navigate('/search')}
+        >
+          Entrar
+        </Button>
       </Form.Group>
-      <Button
-        variant="primary"
-        type="button"
-        disabled={user.length >= 3 && password.length >= 6
-          ? false : true}
-        onClick={() => navigate('/search')}
-      >
-        Entrar
-      </Button>
     </Form>
   );
 }
