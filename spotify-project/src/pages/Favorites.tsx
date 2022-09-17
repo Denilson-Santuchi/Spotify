@@ -1,6 +1,7 @@
-import { Header } from "../components"
+import React from 'react'
+import { Header } from '../components'
 
-export const Favorites = () => {
+export const Favorites: React.FC = () => {
   return (
     <section>
       <Header />

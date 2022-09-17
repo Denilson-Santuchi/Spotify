@@ -1,15 +1,14 @@
-import { useContext } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { AppContext } from '../context'
-import { ILogin } from '../interfaces';
+import { useAppContext } from '../context'
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-export const Header = () => {
-  const { user } = useContext(AppContext) as unknown as ILogin;
+export const Header: React.FC = () => {
+  const { user } = useAppContext()
   const navigate = useNavigate();
 
   return (

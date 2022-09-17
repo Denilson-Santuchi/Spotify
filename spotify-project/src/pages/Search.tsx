@@ -1,6 +1,6 @@
-import { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AppContext } from '../context';
+import { useAppContext } from '../context';
 
 import { LoadingSpinner } from '../components/Spinner';
 import { Header } from '../components';
@@ -12,10 +12,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 
-export const Search = () => {
+export const Search: React.FC = () => {
   const [music, setMusic] = useState('');
   const [loading, setLoading] = useState(false);
-  const { musics, setMusics, setMusicView } = useContext(AppContext) as any;
+  const { musics, setMusics, setMusicView } = useAppContext()
   const navigate = useNavigate();
 
   const useClickButon = async () => {
