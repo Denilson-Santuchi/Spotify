@@ -1,18 +1,19 @@
-import { useContext } from 'react';
-import { AppContext } from '../context';
+import React from 'react';
+import { useAppContext } from '../context';
 import { Header } from '../components';
 import { useNavigate } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-export const Music = () => {
-  const { musicView } = useContext(AppContext) as any;
+export const Music: React.FC = () => {
+  const { musicView } = useAppContext();
   const navigate = useNavigate();
+
   return (
     <section>
       <Header />
-      {musicView.length === 0
+      {Object.keys(musicView).length === 0
         ? <p>carregando</p>
         : <main>
           {[musicView].map(({

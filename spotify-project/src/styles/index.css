@@ -1,15 +1,29 @@
-html {
-  background-color: aqua;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 .mb-3 {
   background-color: black;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  margin: 2rem;
-  padding: 1rem;
-  border: 5rem 1rem;
-  border-radius: 1rem;
+  flex-flow: column wrap;
+  margin: 5%;
+  padding: 4%;
+}
+
+.test {
+  color: white;
+}
+
+.item {
+  flex: 1;
+}
+
+@media screen and (max-width: 350px) {
+  .container {
+    display: block;
+  }
 }
