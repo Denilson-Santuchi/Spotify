@@ -1,30 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../context';
 
 import { LoadingSpinner } from '../components/Spinner';
 import { Header } from '../components';
 
-import { Api } from '../services';
-
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-
 export const Search: React.FC = () => {
-  const [music, setMusic] = useState('');
-  const [loading, setLoading] = useState(false);
-  const { musics, setMusics, setMusicView } = useAppContext()
+  const { musics, setMusicView, loading } = useAppContext()
   const navigate = useNavigate();
 
-  const useClickButon = async () => {
-    setLoading(true)
-    const baseURL = `https://itunes.apple.com/search?term=${music}&enitity=album`;
-    const response = await Api(baseURL);
-    setMusics(response)
-    setLoading(false)
-  }
+  
 
   return (
     <section>
@@ -32,25 +19,6 @@ export const Search: React.FC = () => {
       {loading === true
         ? <LoadingSpinner />
         : <>
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control
-                type="text"
-                placeholder="Nome da música"
-                onChange={({ target }) => setMusic(target.value)}
-              />
-              <div className="search-button">
-                <Button
-                  variant="light"
-                  type="button"
-                  disabled={music.length >= 2 ? false : true}
-                  onClick={useClickButon}
-                >
-                  Pesquisar
-                </Button>
-              </div>
-            </Form.Group>
-          </Form>
           <main>
             {musics.map(({
               artistName,

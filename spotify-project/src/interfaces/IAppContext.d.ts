@@ -17,4 +17,6 @@ interface IAppContext {
   setMusics: React.Dispatch<React.SetStateAction<string[]>>;
   musicView: IMusicView;
   setMusicView: React.Dispatch<React.SetStateAction<IMusicView>>;
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>
 }

@@ -25,7 +25,19 @@
 }
 
 .search-button {
-  margin: 1vmax;
+  margin-left: 1vmin;
+}
+
+.search {
+  display: flex;
+}
+
+.nav-link {
+  font-size: 2rem;
+}
+
+.navbar-brand {
+  font-size: 2rem;
 }
 
 .btn {
