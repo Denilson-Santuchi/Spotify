@@ -3,10 +3,12 @@ import React, { useState, createContext } from 'react';
 export const AppContext = createContext({} as IAppContext);
 
 export const AppContextProvider: React.FC<IContextProvider> = ({ children }) => {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState('user');
   const [password, setPassword] = useState('');
   const [musics, setMusics] = useState([]);
   const [musicView, setMusicView] = useState({} as IMusicView);
+  const [loading, setLoading] = useState(false);
+
   const contextValue = {
     user,
     setUser,
@@ -15,7 +17,9 @@ export const AppContextProvider: React.FC<IContextProvider> = ({ children }) => 
     musics,
     setMusics,
     musicView,
-    setMusicView
+    setMusicView,
+    loading,
+    setLoading
   }
   return (
     <AppContext.Provider value={contextValue}>
