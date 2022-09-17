@@ -1,8 +1,5 @@
-#root {
-  background-color: #202124;
-}
-
-.container {
+.login-container {
+  background-color: #1ED760;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,8 +8,11 @@
 }
 
 .mb-3 {
-  background-color: green;
-  color: white;
+  background-color: var(--bs-body-color);
+  color: var(--bs-light)
+}
+
+.radios {
   padding: 2vmax;
   border-radius: 2vmax;
 }
@@ -24,12 +24,12 @@
   justify-content: center;
 }
 
-.btn {
-  width: 8rem;
+.search-button {
+  margin: 1vmax;
 }
 
-.test {
-  color: white;
+.btn {
+  width: 8rem;
 }
 
 /* @media screen and (max-width: 350px) {

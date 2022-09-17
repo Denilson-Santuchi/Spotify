@@ -39,14 +39,16 @@ export const Search: React.FC = () => {
                 placeholder="Nome da música"
                 onChange={({ target }) => setMusic(target.value)}
               />
-              <Button
-                variant="primary"
-                type="button"
-                disabled={music.length >= 2 ? false : true}
-                onClick={useClickButon}
-              >
-                Pesquisar
-              </Button>
+              <div className="search-button">
+                <Button
+                  variant="light"
+                  type="button"
+                  disabled={music.length >= 2 ? false : true}
+                  onClick={useClickButon}
+                >
+                  Pesquisar
+                </Button>
+              </div>
             </Form.Group>
           </Form>
           <main>
