@@ -16,7 +16,7 @@ import {
   Search
 } from '../pages';
 
-export const Router = () => {
+export const Router: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>

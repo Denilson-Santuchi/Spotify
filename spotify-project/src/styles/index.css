@@ -1,3 +1,7 @@
+#root {
+  background-color: #202124;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -7,23 +11,29 @@
 }
 
 .mb-3 {
-  background-color: black;
+  background-color: green;
   color: white;
-  flex-flow: column wrap;
-  margin: 5%;
-  padding: 4%;
+  padding: 2vmax;
+  border-radius: 2vmax;
+}
+
+.login-button {
+  margin-top: 1vmax;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  width: 8rem;
 }
 
 .test {
   color: white;
 }
 
-.item {
-  flex: 1;
-}
-
-@media screen and (max-width: 350px) {
+/* @media screen and (max-width: 350px) {
   .container {
     display: block;
   }
-}
+} */
