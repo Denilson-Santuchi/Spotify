@@ -14,35 +14,34 @@ export const Login: React.FC = () => {
   return (
     <div className="container">
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label className="item">Username</Form.Label>
+        <Form.Label>Username</Form.Label>
         <Form.Control
-          className="item"
           type="text"
           placeholder="Seu nome de usúario"
           onChange={({ target }) => setUser(target.value)}
         />
-        <div className="item">
+        <div>
           <p className="test">
             Você será chamado por esse nome.
           </p>
         </div>
-        <Form.Label className="item">Senha</Form.Label>
+        <Form.Label>Senha</Form.Label>
         <Form.Control
-          className="item"
           type="password"
           placeholder="Sua senha"
           onChange={({ target }) => setPassword(target.value)}
         />
-        <Button
-          className="item"
-          variant="primary"
-          type="button"
-          disabled={user.length >= 3 && password.length >= 6
-            ? false : true}
-          onClick={() => navigate('/search')}
-        >
-          Entrar
-        </Button>
+        <div  className="login-button">
+          <Button
+            variant="dark"
+            type="button"
+            disabled={user.length >= 3 && password.length >= 6
+              ? false : true}
+            onClick={() => navigate('/search')}
+          >
+            Entrar
+          </Button>
+        </div>
       </Form.Group>
     </div>
   );
