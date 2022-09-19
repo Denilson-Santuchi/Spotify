@@ -11,8 +11,6 @@ export const Search: React.FC = () => {
   const { musics, setMusicView, loading } = useAppContext()
   const navigate = useNavigate();
 
-  
-
   return (
     <section>
       <Header />

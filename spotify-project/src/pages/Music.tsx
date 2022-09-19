@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 export const Music: React.FC = () => {
-  const { musicView } = useAppContext();
+  const { musicView, setFavoritesMusics, favoritesMusics } = useAppContext();
   const navigate = useNavigate();
 
   return (
@@ -22,7 +22,7 @@ export const Music: React.FC = () => {
             trackName,
             previewUrl,
             primaryGenreName,
-            artworkUrl100 }: any) => {
+            artworkUrl100 }: IMusicView) => {
             return (
               <Card style={{ width: '20rem' }}>
                 <Card.Img variant="top" src={artworkUrl100} alt={collectionName} />
@@ -45,6 +45,17 @@ export const Music: React.FC = () => {
                   onClick={() => navigate('/search')}
                 >
                   Voltar
+                </Button>
+                <Button
+                  variant="primary"
+                  type="button"
+                  onClick={() => {
+                    setFavoritesMusics([musicView] as any)
+                    console.log(favoritesMusics);
+                  }
+                  }
+                >
+                  Favorita
                 </Button>
               </Card>
             )

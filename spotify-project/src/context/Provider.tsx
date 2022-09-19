@@ -8,6 +8,7 @@ export const AppContextProvider: React.FC<IContextProvider> = ({ children }) => 
   const [musics, setMusics] = useState([]);
   const [musicView, setMusicView] = useState({} as IMusicView);
   const [loading, setLoading] = useState(false);
+  const [favoritesMusics, setFavoritesMusics] = useState([]);
 
   const contextValue = {
     user,
@@ -19,7 +20,9 @@ export const AppContextProvider: React.FC<IContextProvider> = ({ children }) => 
     musicView,
     setMusicView,
     loading,
-    setLoading
+    setLoading,
+    favoritesMusics,
+    setFavoritesMusics
   }
   return (
     <AppContext.Provider value={contextValue}>
